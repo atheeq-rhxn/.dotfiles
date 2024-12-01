@@ -1,0 +1,461 @@
+exit
+zellij
+q
+exit
+c
+exit 
+$nu.env-path
+hx /var/home/atheeq/.config/nushell/env.nu
+$nu.config.path
+$nu.config-path
+hx /var/home/atheeq/.config/nushell/config.nu
+c
+d
+exit
+hx /var/home/atheeq/.config/nushell/config.nu
+exit
+y
+wezterm
+y
+hx /var/home/atheeq/.config/nushell/config.nu
+y
+exit
+y
+c
+exit
+y
+c
+e
+clear
+y
+hx /var/home/atheeq/.config/nushell/config.nu
+d
+dev
+e
+exit
+$nu.config-path
+hx /var/home/atheeq/.config/nushell/config.nu
+c
+exit
+$nu.config-path
+hx /var/home/atheeq/.config/nushell/config.nu
+y
+exit
+y
+hx /var/home/atheeq/.config/nushell/config.nu
+y
+hx /var/home/atheeq/.config/nushell/config.nu
+c
+exit
+nu
+hx /var/home/atheeq/.config/nushell/config.nu
+exit
+c
+nu
+e
+c
+nu
+e
+nu
+exit
+c
+y
+d
+c
+y
+c
+y
+c
+y
+hx
+y
+starship preset bracketed-segments -o ~/.config/starship.toml
+y
+c
+y
+starship preset jetpack -o ~/.config/starship.toml
+y
+c
+y
+c
+zellij
+zellij --layout compact
+zellij
+y
+mkdir ~/.config/zellij<\n>zellij setup --dump-config > ~/.config/zellij/config.kdl<\n>
+mkdir ~/.config/zellijllij setup --dump-config > ~/.config/zellij/config.kdl<\n>
+mkdir ~/.config/zellij<\n>zellij setup --dump-config > ~/.config/zellij/config.kdl<\n>
+y
+c
+y
+zellij
+y
+zellij
+y
+zellij --layout
+zellij --layout --help
+y
+zellij
+y
+zellij
+y
+zellij
+y
+zellij
+y
+zellij
+y
+zellij
+y
+zellij
+y
+zoxide
+y
+zellij
+c
+$nu.config-path
+hx /var/home/atheeq/.config/nushell/config.nu
+d
+wq
+exit
+hx /var/home/atheeq/.config/nushell/config.nu
+$nu.env-path
+hx /var/home/atheeq/.config/nushell/env.nu
+c
+y
+c
+y
+c
+y
+d
+y
+c
+d
+hx
+c
+y
+toolbox enter dev
+bash
+d
+y
+c
+y
+c
+y
+python app.py
+y
+/bin/python "/var/home/atheeq/Documents/GDG Hackathon/app.py"
+snapd
+snap
+c
+y
+c
+y
+cargo install --locked zellij
+zellij
+y
+zellij
+cargo uninstall zellij
+hx
+y
+d
+cargo install --locked zellij
+y
+zellij
+c
+zellij
+y
+c
+d
+cd
+c
+y
+hx
+y
+c
+cd
+python app.py
+y
+c
+y
+zellij
+cd
+y
+hx
+y
+d
+y
+e
+exit
+y
+git clone https://github.com/luccahuguet/yazelix<\n>
+y
+hx
+y
+yazelix
+zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layout
+y
+c
+cd
+c
+y
+zellij
+zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layout
+y
+zellij
+y
+c
+y
+e
+exit
+y
+zellij
+y
+c
+y
+c
+y
+c
+python app.py
+c
+y
+python test.py
+y
+python test.py
+y
+python test.py
+y
+python test.py
+y
+python test.py
+y
+python test.py
+y
+python test.py
+c
+python test.py
+c
+python test.py
+c
+python test.py
+ls
+y
+python app.py
+python test.py
+c
+python test.py
+c
+python test.py
+km    m    c
+c
+python test.py
+c
+python test.py
+c
+y
+c
+python test.py
+c
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+y
+python gayfinder.py
+c
+python gayfinder.py
+y
+python app.py
+y
+c
+pyt
+y
+python l1.py
+y
+python a.py
+y
+python a.py
+y
+python a.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+c
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+c
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+y
+python py.py
+c
+zellij
+y
+zellij
+cargo uninstall zellij
+y
+cargo install --locked zellij
+zellij
+ya pack -a dawsers/dual-pane
+y
+ya pack -a dawsers/dual-pane
+y
+ya pack -rf dawsers/dual-pane
+y
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-fedora.sh)
+y
+toolbox enter dev
+c
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup-fedora.sh)
+y
+c
+stow
+c
+y
+ls
+mv starship.toml ~/Documents/dotfiles
+y
+stow
+stow -t ~/.config
+stow -t ~/.config/starship.toml
+y
+stow starship
+y
+ls
+y
+cd
+ls
+ls -l
+y
+ls
+y
+stow zellij
+bash
+zellij
+y
+stow .logseq
+y
+unstow .logseq
+stow
+stow -D .logseq
+y
+stow logseq
+y
+stow lsp
+y
+stow -D lsp
+y
+stow -D lsp
+y
+stow lsp
+y
+c
+git config --global user.name "atheeq"
+git config --global user.email "atheeq.rhxn@gmail.com"
+ssh-keygen -t ed25519 -C "atheeq.rhxn@gmail.com"
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+y
+git init
+git add .
+y
+stow -D logseq
+y

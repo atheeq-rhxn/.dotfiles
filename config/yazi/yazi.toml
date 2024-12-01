@@ -1,0 +1,14 @@
+[manager]
+show_hidden = true
+
+[opener]
+edit = [
+  { run = 'hx "$@"', block = true}
+]
+
+[open]
+prepend_rules = [
+	{ name = "*.json", use = "edit" },
+
+	{ name = "*.html", use = "edit" },
+]

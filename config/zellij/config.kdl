@@ -1,0 +1,35 @@
+default_shell "nu"
+
+theme "catppuccin-mocha"
+themes {
+  catppuccin-mocha {
+    bg "#585b70"
+    fg "#cdd6f4"
+    red "#f38ba8"
+    green "#a6e3a1"
+    blue "#89b4fa"
+    yellow "#f9e2af"
+    magenta "#f5c2e7"
+    orange "#fab387"
+    cyan "#89dceb"
+    black "#181825"
+    white "#cdd6f4"
+  }
+}
+
+default_layout "compact"
+
+mouse_mode true
+
+ui {
+    pane_frames {
+        rounded_corners true
+        hide_session_name true
+    }
+}
+
+disable_session_metadata true
+
+keybinds {
+	unbind "Alt f"
+}

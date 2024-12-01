@@ -1,0 +1,11 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+
+[keys.insert]
+j = { f = "normal_mode" }
+
+[keys.normal]
+space = {w = {a = ":wa"}}
+A-f = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"

@@ -1,0 +1,24 @@
+[[language]]
+name = "html"
+file-types = ["html"]
+formatter = { command = "/usr/local/bin/prettier", args = ["--stdin-filepath", "%file"] }
+language-servers = ["vscode-html-language-server"]
+
+[[language]]
+name = "elixir"
+scope = "source.elixir"
+injection-regex = "elixir"
+file-types = ["ex", "exs"]
+roots = ["mix.exs"]
+auto-format = true
+
+[language.debugger]
+name = "elixir-dap"
+transport = "stdio"
+command = "/usr/local/bin/elixir-dap"
+
+[[language.debugger.templates]]
+name = "default"
+kind = "launch"
+request = "launch"
+args = { program = "mix", args = ["test"] }

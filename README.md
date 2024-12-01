@@ -1,5 +1,3 @@
-Here’s a reordered version:
-
 ---
 
 This is my development environment setup. Here are the tools I use:

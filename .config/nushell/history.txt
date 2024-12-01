@@ -496,3 +496,76 @@ y
 stow -D helix
 y
 stow -D wezterm
+hx
+c
+which vscode-html-language-server<\n>
+y
+ls -l
+ls symlink
+ls type = "symlink"
+ls
+ls -l
+y
+stow -t /usr/local/lib/node_modules/vscode-langservers-extracted/lib lsp
+c
+y
+cd /usr/local/lib/node_modules/vscode-langservers-extracted/lib
+y
+stow -t /home/atheeq/.dotfiles/lsp html-language-server
+y
+stow -t ~/.dotfiles/lsp html-language-server
+y
+stow -t ~/.dotfiles/home/lsp html-language-server
+stow -t ~/.dotfiles/home/lsp css-language-server
+y
+cd
+y
+stow -t ~/.dotfiles/home/lsp lib
+y
+cd
+y
+cd
+y
+cd
+y
+stow -t /usr/local/bin elixir-dap.sh
+y
+stow -t /usr/local/bin elixir-ls.sh
+y
+cd
+y
+stow -t /usr/local/bin elixir-ls.sh
+ls
+stow -t /usr/local/bin .<\n>
+y
+stow -t /usr/local/bin .<\n>
+sudo stow -t /usr/local/bin
+sudo stow -t /usr/local/bin .<\n>
+y
+sudo y
+sudo yazi
+yazi
+cd
+y
+iex
+y
+ls
+y
+cd
+y
+cd
+y
+cd
+y
+ls
+rm -rf elixir-dap
+rm elixir-dap
+sudo rm elixir-dap
+sudo rm elixir-ls
+sudo rm elixir-dap.sh
+sudo rm elixir-ls.sh
+ls
+cd
+y
+sudo stow -t /usr/local/bin .<\n>
+y

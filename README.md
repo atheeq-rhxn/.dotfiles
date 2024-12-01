@@ -1,5 +1,3 @@
----
-
 This is my development environment setup. Here are the tools I use:
 
 - **Terminal**: WezTerm  
@@ -9,5 +7,3 @@ This is my development environment setup. Here are the tools I use:
 - **Git Interface**: GitUI  
 - **Multiplexer**: Zellij  
 - **Prompt**: Starship  
-
---- 

@@ -9,6 +9,5 @@ edit = [
 [open]
 prepend_rules = [
 	{ name = "*.json", use = "edit" },
-
 	{ name = "*.html", use = "edit" },
 ]

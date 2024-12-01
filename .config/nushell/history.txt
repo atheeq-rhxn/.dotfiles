@@ -459,3 +459,40 @@ git add .
 y
 stow -D logseq
 y
+git add .
+y
+touch .gitignore
+y
+git commit -m "First commit of dotfiles"
+git remote add origin git@github.com:atheeq-rhxn/dotfiles.git<\n>git branch -M main<\n>git push -u origin main
+git branch -M main<\n>git push -u origin main<\n>
+git remote remove origin<\n>git remote add origin git@github.com:atheeq-rhxn/.dotfiles.git
+git branch -M main<\n>git push -u origin main<\n>
+git fetch origin<\n>
+git merge origin/main<\n>
+git push -u origin main --force<\n>
+y
+stow -t ~/.logseq logseq
+y
+stow -D lsp
+y
+stow -D config
+y
+stow -D config/*
+y
+stow -D *
+y
+stow -D config/wezterm
+y
+stow -D wezterm
+y
+stow -D config/helix
+stow -D helix<\n>
+y
+stow -l
+y
+stow -D config
+y
+stow -D helix
+y
+stow -D wezterm

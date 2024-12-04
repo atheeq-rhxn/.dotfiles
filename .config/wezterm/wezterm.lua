@@ -4,6 +4,7 @@ local mux = wezterm.mux
 
 local config = {}
 
+config.enable_wayland = false
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "catppuccin-mocha"

@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins:no-status", rev = "ad52adf" }, { use = "Ape/open-with-cmd", rev = "8d7abc8" }]
+deps = [{ use = "yazi-rs/plugins:no-status", rev = "ad52adf" }, { use = "Ape/open-with-cmd", rev = "8d7abc8" }, { use = "yazi-rs/plugins:smart-enter", rev = "40eafa3" }]
 
 [flavor]
 deps = []

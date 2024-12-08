@@ -46,18 +46,12 @@ check_dependencies() {
 
 # Main installation process
 main() {
-    # Dynamic variables
-    local install_dir
+    # Set installation directory to ~/lsp
+    local install_dir="$HOME/lsp"
     local repo_url="https://github.com/elixir-lsp/elixir-ls"
     local dependencies=("git" "dnf")
 
-    read -rp "Enter installation directory (default: $HOME/lsp): " install_dir
-    install_dir=${install_dir:-"$HOME/lsp"}
     log "INFO" "Installation directory set to: $install_dir"
-
-    read -rp "Enter ElixirLS Git URL (default: $repo_url): " custom_repo
-    repo_url=${custom_repo:-"$repo_url"}
-
     log "INFO" "Repository URL set to: $repo_url"
 
     # Check dependencies

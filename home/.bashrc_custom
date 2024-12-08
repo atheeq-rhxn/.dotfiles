@@ -24,7 +24,7 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
 . "$HOME/.cargo/env"
 
@@ -37,12 +37,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-
-
-function d() {
-  toolbox enter dev
-}
-clear
 
 function c() {
   clear

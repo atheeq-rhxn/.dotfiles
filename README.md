@@ -9,7 +9,7 @@
 
 Elixir-ls installation:
 ```
-curl -O https://raw.githubusercontent.com/atheeq-rhxn/.dotfiles/elixir-ls-installer.sh
+curl -O https://raw.githubusercontent.com/atheeq-rhxn/.dotfiles/main/elixir-ls-installer.sh
 chmod +x elixir-ls-installer.sh
 sudo ./elixir-ls-installer.sh
 ```

@@ -4,6 +4,7 @@ local mux = wezterm.mux
 
 local config = {}
 
+config.window_background_opacity = 0.7
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "catppuccin-mocha"
@@ -24,22 +25,22 @@ config.keys = {
   
   -- Pane navigation actions
 
-  { key = "h",          
-    mods = "ALT",      
-    action = act.ActivatePaneDirection("Left") 
-  },
-  { key = "j",          
-    mods = "ALT",      
-    action = act.ActivatePaneDirection("Down") 
-  },
-  { key = "k",          
-    mods = "ALT",      
-    action = act.ActivatePaneDirection("Up") 
-  },
-  { key = "l",          
-    mods = "ALT",      
-    action = act.ActivatePaneDirection("Right") 
-  },
+  -- { key = "h",          
+  --   mods = "ALT",      
+  --   action = act.ActivatePaneDirection("Left") 
+  -- },
+  -- { key = "j",          
+  --   mods = "ALT",      
+  --   action = act.ActivatePaneDirection("Down") 
+  -- },
+  -- { key = "k",          
+  --   mods = "ALT",      
+  --   action = act.ActivatePaneDirection("Up") 
+  -- },
+  -- { key = "l",          
+  --   mods = "ALT",      
+  --   action = act.ActivatePaneDirection("Right") 
+  -- },
 
   -- Pane management actions
   {

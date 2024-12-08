@@ -30,6 +30,3 @@ ui {
 
 disable_session_metadata true
 
-keybinds {
-	unbind "Alt f"
-}

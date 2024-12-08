@@ -29,6 +29,14 @@ unset rc
 . "$HOME/.cargo/env"
 
 
+function z() {
+	zellij
+}
+
+function x() {
+	zellij --config-dir ~/.config/yazelix/zellij	
+}
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -45,6 +53,3 @@ function c() {
 function e() {
   exit
 }
-
-export PATH="$PATH:/var/home/atheeq/.mix/escripts"
-export PATH="$PATH:/var/home/atheeq/lsp/elixir-ls-v0.24.1"

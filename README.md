@@ -1,4 +1,3 @@
-This is my development environment setup. Here are the tools I use:
 
 - **Terminal**: WezTerm  
 - **Shell**: Nushell  
@@ -7,3 +6,10 @@ This is my development environment setup. Here are the tools I use:
 - **Git Interface**: GitUI  
 - **Multiplexer**: Zellij  
 - **Prompt**: Starship  
+
+Elixir-ls installation:
+```
+curl -O https://raw.githubusercontent.com/atheeq-rhxn/.dotfiles/elixir-ls-installer.sh
+chmod +x elixir-ls-installer.sh
+sudo ./elixir-ls-installer.sh
+```

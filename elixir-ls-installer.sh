@@ -70,6 +70,12 @@ main() {
         exit_on_error "mix command not found after installation"
     fi
 
+    # Remove existing elixir-ls directory if it exists
+    if [ -d "$install_dir/elixir-ls" ]; then
+        log "WARN" "Existing elixir-ls directory found. Removing it..."
+        rm -rf "$install_dir/elixir-ls" || exit_on_error "Failed to remove existing elixir-ls directory"
+    fi
+
     # Clone ElixirLS repository
     log "INFO" "Cloning ElixirLS repository..."
     cd "$install_dir" || exit_on_error "Failed to change directory"

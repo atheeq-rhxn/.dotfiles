@@ -7,8 +7,8 @@ local config = {}
 config.window_background_opacity = 0.7
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
-config.color_scheme = "catppuccin-mocha"
 config.font = wezterm.font 'JetBrains Mono'
+config.color_scheme = "catppuccin-mocha"
 config.font_size = 18 
 config.max_fps = 120
 

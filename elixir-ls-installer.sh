@@ -13,9 +13,15 @@ log() {
     local color=$NC
 
     case $level in
-        "INFO") color=$GREEN ;;
-        "WARN") color=$YELLOW ;;
-        "ERROR") color=$RED ;;
+        "INFO")
+            color=$GREEN
+            ;;
+        "WARN")
+            color=$YELLOW
+            ;;
+        "ERROR")
+            color=$RED
+            ;;
     esac
 
     echo -e "${color}[$level]${NC} $message"
@@ -36,7 +42,7 @@ fi
 
 # Dependency check
 check_dependencies() {
-    local dependencies=("$@")
+    local dependencies=("git" "dnf")
     for dep in "${dependencies[@]}"; do
         if ! command -v "$dep" &> /dev/null; then
             exit_on_error "Dependency '$dep' is not installed"
@@ -46,20 +52,16 @@ check_dependencies() {
 
 # Main installation process
 main() {
-    # Set installation directory to ~/lsp
-    local install_dir="$HOME/lsp"
-    local repo_url="https://github.com/elixir-lsp/elixir-ls"
-    local dependencies=("git" "dnf")
-
-    log "INFO" "Installation directory set to: $install_dir"
-    log "INFO" "Repository URL set to: $repo_url"
-
     # Check dependencies
-    check_dependencies "${dependencies[@]}"
+    check_dependencies
+
+    # Create LSP directory in user's home
+    log "INFO" "Creating LSP directory..."
+    mkdir -p ~/lsp || exit_on_error "Failed to create LSP directory"
 
     # Create installation directories
     log "INFO" "Creating necessary directories..."
-    mkdir -p "$install_dir" /usr/local/elixir-ls || exit_on_error "Failed to create directories"
+    mkdir -p /usr/local/elixir-ls || exit_on_error "Failed to create installation directories"
 
     # Install Erlang and Elixir
     log "INFO" "Installing Erlang and Elixir..."
@@ -70,19 +72,12 @@ main() {
         exit_on_error "mix command not found after installation"
     fi
 
-    # Remove existing elixir-ls directory if it exists
-    if [ -d "$install_dir/elixir-ls" ]; then
-        log "WARN" "Existing elixir-ls directory found. Removing it..."
-        rm -rf "$install_dir/elixir-ls" || exit_on_error "Failed to remove existing elixir-ls directory"
-    fi
-
     # Clone ElixirLS repository
     log "INFO" "Cloning ElixirLS repository..."
-    cd "$install_dir" || exit_on_error "Failed to change directory"
-    git clone "$repo_url" || exit_on_error "Failed to clone ElixirLS repository"
+    git clone https://github.com/elixir-lsp/elixir-ls.git ~/lsp/elixir-ls || exit_on_error "Failed to clone ElixirLS repository"
 
     # Build ElixirLS
-    cd elixir-ls || exit_on_error "Failed to change to elixir-ls directory"
+    cd ~/lsp/elixir-ls || exit_on_error "Failed to change to source directory"
     log "INFO" "Fetching dependencies..."
     mix deps.get || exit_on_error "Failed to fetch dependencies"
 
@@ -95,16 +90,23 @@ main() {
 
     # Setup language server
     log "INFO" "Setting up language server..."
-    cd /usr/local/elixir-ls || exit_on_error "Failed to change to elixir-ls directory"
+    cd /usr/local/elixir-ls || exit_on_error "Failed to change to release directory"
 
-    # Ensure language_server.sh is executable and linked
-    if [ -f "./language_server.sh" ]; then
-        chmod +x "./language_server.sh" || exit_on_error "Failed to make language_server.sh executable"
-        ln -sf "$(pwd)/language_server.sh" /usr/local/bin/elixir-ls || exit_on_error "Failed to create symbolic link for language_server.sh as elixir-ls"
-        log "INFO" "language_server.sh is set up as elixir-ls in /usr/local/bin"
-    else
-        exit_on_error "language_server.sh not found in /usr/local/elixir-ls"
+    # Search for language_server.sh, make it executable, rename, and create a symbolic link
+    find . -type f -name "language_server.sh" | while read -r file; do
+        dir=$(dirname "$file")
+        mv "$file" "$dir/elixir-ls" || { echo "Failed to rename $file to elixir-ls"; exit 1; }
+        chmod +x "$dir/elixir-ls" || { echo "Failed to make $dir/elixir-ls executable"; exit 1; }
+        ln -sf "$PWD/$dir/elixir-ls" /usr/local/bin/elixir-ls || { echo "Failed to create symbolic link"; exit 1; }
+        echo "Symbolic link created for $dir/elixir-ls at /usr/local/bin/elixir-ls"
+        break  # Exit after handling the first match
+    done
+
+    if [ $? -ne 0 ]; then
+        echo "No file named 'language_server.sh' found or failed to process."
+        exit 1
     fi
+
 
     # Update PATH (use .profile for wider compatibility)
     log "INFO" "Updating PATH environment variable..."
@@ -127,4 +129,4 @@ main() {
 # Run the main installation process
 main
 
-log "INFO" "Installation completed. Please restart your terminal or run 'source ~/.profile'."
+log "INFO" "Installation completed. Please restart your terminal."

@@ -124,7 +124,7 @@ main() {
         echo '# ElixirLS PATH additions'
         echo 'export PATH="$PATH:/usr/bin/mix"'
         echo 'export PATH="$PATH:/usr/bin/elixir"'
-        echo 'export PATH="$PATH:/usr/local/elixir-ls"'
+        echo 'export PATH="$PATH:/usr/local/bin/elixir-ls"'
     } >> ~/.profile
 
     # Verification

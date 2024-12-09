@@ -7,7 +7,7 @@
 - **Multiplexer**: Zellij  
 - **Prompt**: Starship  
 
-Elixir-ls installation:
+elixir lsp setup for fedora:
 ```
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/atheeq-rhxn/.dotfiles/main/elixir-ls-installer.sh)"
 ```

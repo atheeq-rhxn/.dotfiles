@@ -59,6 +59,17 @@ main() {
     log "INFO" "Creating LSP directory..."
     mkdir -p ~/lsp || exit_on_error "Failed to create LSP directory"
 
+    # Remove existing ElixirLS repositories if they exist
+    if [ -d ~/lsp/elixir-ls ]; then
+        log "WARN" "Existing ElixirLS repository found in ~/lsp/elixir-ls. Removing..."
+        rm -rf ~/lsp/elixir-ls || exit_on_error "Failed to remove existing ElixirLS repository in ~/lsp"
+    fi
+
+    if [ -d /usr/local/elixir-ls ]; then
+        log "WARN" "Existing ElixirLS installation found in /usr/local/elixir-ls. Removing..."
+        rm -rf /usr/local/elixir-ls || exit_on_error "Failed to remove existing ElixirLS installation in /usr/local"
+    fi
+
     # Create installation directories
     log "INFO" "Creating necessary directories..."
     mkdir -p /usr/local/elixir-ls || exit_on_error "Failed to create installation directories"
@@ -95,18 +106,17 @@ main() {
     # Search for language_server.sh, make it executable, rename, and create a symbolic link
     find . -type f -name "language_server.sh" | while read -r file; do
         dir=$(dirname "$file")
-        mv "$file" "$dir/elixir-ls" || { echo "Failed to rename $file to elixir-ls"; exit 1; }
-        chmod +x "$dir/elixir-ls" || { echo "Failed to make $dir/elixir-ls executable"; exit 1; }
-        ln -sf "$PWD/$dir/elixir-ls" /usr/local/bin/elixir-ls || { echo "Failed to create symbolic link"; exit 1; }
-        echo "Symbolic link created for $dir/elixir-ls at /usr/local/bin/elixir-ls"
+        mv "$file" "$dir/elixir-ls" || { log "ERROR" "Failed to rename $file to elixir-ls"; exit 1; }
+        chmod +x "$dir/elixir-ls" || { log "ERROR" "Failed to make $dir/elixir-ls executable"; exit 1; }
+        ln -sf "$PWD/$dir/elixir-ls" /usr/local/bin/elixir-ls || { log "ERROR" "Failed to create symbolic link"; exit 1; }
+        log "INFO" "Symbolic link created for $dir/elixir-ls at /usr/local/bin/elixir-ls"
         break  # Exit after handling the first match
     done
 
     if [ $? -ne 0 ]; then
-        echo "No file named 'language_server.sh' found or failed to process."
+        log "ERROR" "No file named 'language_server.sh' found or failed to process."
         exit 1
     fi
-
 
     # Update PATH (use .profile for wider compatibility)
     log "INFO" "Updating PATH environment variable..."
